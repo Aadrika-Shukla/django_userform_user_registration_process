@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static   # for  additional url suffix attachment you need static and settings to be imported where static is module here in which we have one more function is their static
 from django.conf import settings     # for  additional url suffix attachment you need static and settings to be imported
+from app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('registration/',registration,name='registration'),
    
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

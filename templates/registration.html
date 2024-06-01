@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER REGISTRATION</title>
+</head>
+<body>
+    <center>
+        <h1>USER REGISTRATION FORM</h1>
+        <form a method="POST" enctype="multipart/form-data">   <!--enctype we need to give because we are sending image else it will do nothing and our post method will not get activated/or data is not getting submit--> 
+            {% csrf_token %}
+             {{EUFO.as_p}}                               <!--to display  empty user form input fields so that user can enter their data-->
+             {{EPFO.as_p}}                                <!--to display  empty profile form input fields so that user can enter their data-->
+             <input type="submit" value="register">        <!--in value we provide the argument to display what name you want in your button-->
+        </form>
+    </center>
+</body>
+</html>
