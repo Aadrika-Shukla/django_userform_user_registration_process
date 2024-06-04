@@ -4,6 +4,8 @@ from django.http import HttpResponse
 # Create your views here.
 from app.forms import *   # to import all the forms from our app
 
+from django.core.mail import send_mail
+
 
 
 
@@ -42,7 +44,10 @@ def registration(request):
             MUFDO.save()                               # now save the encrypted/operations performed data into database
             MPFDO=NMPFDO.save(commit=False)            # again I need to give that encrypted password(modified data after operations ) to my profile of every user  as it is child table
             MPFDO.username=MUFDO                       #as in models of profile we have 3 coloumns username,profile_pic,address but in forms for profile we created only 2 coloumns profile_pic and address and for username we are passing userform object so we need to provide that data to our profile form 
-            MPFDO.save()                               # now save the data after performing operations  into database
+            MPFDO.save()    # now save the data after performing operations  into database
+
+
+            send_mail('REGISTRATION SUCCESSFULL','Thank you for registering with us !',' aadrikashukla1904@gmail.com',[MUFDO.email],fail_silently=False)
             return HttpResponse('REGISTRATION SUCCESSFULL')
         else:
             return HttpResponse('INVALID DATA CAN"T REGISTER')

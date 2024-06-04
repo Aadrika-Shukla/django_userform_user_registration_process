@@ -124,7 +124,15 @@ MEDIA_DIR=os.path.join(BASE_DIR,'media')      #to store the media files
 
 MEDIA_ROOT=MEDIA_DIR                          #to register the path of media files above two media_dir and media_root is for giving path
 
-MEDIA_URL='media/'                            # to access our media files
+MEDIA_URL='media/'     # to access our media files
+
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='aadrikashukla1904@gmail.com'
+EMAIL_HOST_PASSWORD='gvfxkrdwndwbyyqt'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
  
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
